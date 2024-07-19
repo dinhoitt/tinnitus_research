@@ -1,7 +1,6 @@
 import numpy as np
 import matplotlib.pylab as plt
 import matplotlib.gridspec as gridspec
-import pandas as pd
 from scipy.io import wavfile
 from scipy.signal import spectrogram
 import librosa
@@ -10,10 +9,10 @@ from scipy.fft import fft, ifft
 from pydub import AudioSegment
 
 # wav file 로딩
-audio = AudioSegment.from_file(r"C:\Users\taeso\Desktop\testfft.wav")
+audio = AudioSegment.from_file("C:\\Users\\taeso\\OneDrive\\바탕 화면\\testbibeat.wav")
 
 # wav 파일 로딩
-fs, data = wavfile.read("C:/Users/taeso/Desktop/testfft.wav")
+fs, data = wavfile.read("C:\\Users\\taeso\\OneDrive\\바탕 화면\\testbibeat.wav")
 
 # 데이터를 Float 타입으로 변환
 data_float = data.astype(np.float64)
@@ -40,7 +39,7 @@ ax1.set_ylabel('Amplitude')
 
 # 두 번째 서브플롯: 스펙트로그램
 ax2 = fig.add_subplot(gs[1])
-frequencies, times, Sxx = spectrogram(data, fs, nperseg=1024)
+frequencies, times, Sxx = spectrogram(data, fs, nperseg=10)
 img = ax2.pcolormesh(times, frequencies, 10 * np.log10(Sxx), shading='gouraud')
 ax2.set_ylabel('Frequency [Hz]')
 ax2.set_xlabel('Time [sec]')

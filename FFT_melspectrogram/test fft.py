@@ -1,6 +1,5 @@
 import numpy as np
 import matplotlib.pylab as plt
-import pandas as pd
 from scipy.io import wavfile
 from scipy.signal import spectrogram
 import librosa
