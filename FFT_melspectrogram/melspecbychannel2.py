@@ -5,7 +5,7 @@ import librosa
 import librosa.display
 
 # mp3 파일 로딩
-filename = "C:\\Users\\taeso\\OneDrive\\바탕 화면\\test_complete2.mp3"
+filename = "C:\\Users\\taeso\\OneDrive\\바탕 화면\\test_complete224.mp3"
 data, fs = librosa.load(filename, sr=None, mono=False)
 
 # 왼쪽 채널과 오른쪽 채널 분리

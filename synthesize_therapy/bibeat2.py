@@ -92,8 +92,8 @@ duration_ms = len(filtered_audio)  # 기존 오디오와 동일한 길이
 
 # 사인파 생성 및 볼륨 조절
 # 기존 오디오 볼륨보다 5dB 낮게 설정
-sine_right = Sine(frequency_right).to_audio_segment(duration=duration_ms).apply_gain(average_dbfs - 5)
-sine_left = Sine(frequency_left).to_audio_segment(duration=duration_ms).apply_gain(average_dbfs - 5)
+sine_right = Sine(frequency_right).to_audio_segment(duration=duration_ms).apply_gain(average_dbfs - 10)
+sine_left = Sine(frequency_left).to_audio_segment(duration=duration_ms).apply_gain(average_dbfs - 10)
 
 # 스테레오 사인파 생성
 stereo_sine = AudioSegment.from_mono_audiosegments(sine_left, sine_right)
